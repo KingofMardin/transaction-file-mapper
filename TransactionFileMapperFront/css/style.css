@@ -1,0 +1,15 @@
+.badge {
+    color: #346ee0!important;
+    background-color: rgba(52, 110, 224, .18);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.card{
+    border-radius: 10px!important;
+    overflow: hidden;
+}
+
+.balance-header{
+    min-height: 58px;
+}

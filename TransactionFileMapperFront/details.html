@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction File Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body class="page-detailsPage">
+    <div class="px-3 py-3">
+        <div class="container">
+            <div class="py-3 py-lg-4">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 class="page-title mb-0 text-center">Transaction File Manager</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <div class="mb-5 row">
+                    <table class="table table-bordered table-striped mb-0">
+                        <tbody>
+                            <tr>
+                                <th class="text-nowrap" scope="row">Account Owner Information</th>
+                                <td colspan="6" id="accountOwnerInformation"></td>
+                            </tr>
+                            <tr>
+                                <th class="text-nowrap" scope="row">Account Owner Code</th>
+                                <td colspan="6" id="accountOwnerCode"></td>
+                            </tr>
+                            <tr>
+                                <th class="text-nowrap" scope="row">Identifier Code</th>
+                                <td colspan="6" id="identifierCode"></td>
+                            </tr>
+                            <tr>
+                                <th class="text-nowrap" scope="row">Related Reference</th>
+                                <td colspan="6" id="relatedReference"></td>
+                            </tr>
+                            <tr>
+                                <th class="text-nowrap" scope="row">Sequence Number</th>
+                                <td colspan="6" id="sequenceNumber"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="mt-5">
+                <div class="mb-5 row">
+                    <div class="col-md-3 p-2">
+                        <div class="p-2 border border-success">
+                            <div class="d-flex gap-3 align-items-center balance-header">
+                                <img width="42" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAABMBAMAAAA1uUwYAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAqUExURXDaOEdwTL/wpH/hS5TnaHLbO3PZObTulqLqeq7sjcbxr3HdN3/hS7Xtl34OCWwAAAAKdFJOUykA8eVVHhDMfbS/E1UkAAAA80lEQVRIx+3WoQ6CUBiG4V8HqE2CZkdxs3oDBC8AixmD3RlNZpPZSFHPLahXIF6Bci8eMMH59XwycNPxbrRnY5yNs49s2cyjl5mTWJB83qAEPplPmqyYdUnbVDJfzyzJCMimDsLG1EZYjXyEWeQhzERZ1T/XXDip+iuWLUWmHacaQmnOsLXK9gwbqCzIzwRTfjZkYtiRqXTmMJV+IB+wexiGVz27yK876VlyCnp2k+oMfEIURV8/kOIY+C9sVXZgWF1lPYYZylsDl7sdWhkXbPgryRilcqtL+kcrdoeA4wecUuAwA2ceOhrBCQoOWnQeI2P7AThIfMWq7VqWAAAAAElFTkSuQmCC" alt="image"/>
+                                <h5>Opening Balance</h5>
+                            </div>
+                            <hr/>
+                            <div class="d-grid gap-2 openingBalanceItemList">
+                                <span class="creditDebitCode d-flex justify-content-between">Credit Debit Code <b></b></span>
+                                <span class="bookDate d-flex justify-content-between">Book Date <b></b></span>
+                                <span class="currencyCode d-flex justify-content-between">Currency Code <b></b></span>
+                                <span class="balance d-flex justify-content-between">Balance <b></b></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 p-2">
+                        <div class="p-2 border border-info">
+                            <div class="d-flex gap-3 align-items-center balance-header">
+                                <img width="42" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAMAAAArteDzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAzUExURQDB7JDl93ng9oHi9kLS8wDE8QDG6UdwTGLZ9Gbc9WLa9CnN80DT8prn92fb8wTD7EvV8cfpimwAAAANdFJOUyn8z+J9HhAAk+StQ2b3/5lYAAABCklEQVRYw+3Z3RJDMBCG4Y1ko0ES93+1VcpoDyphvxkq74mzZ+hPkKX6nWWmQzHb2aLpcBBc4BVqSSw7o4LmpJKwOaoDSsK9UJZGeUBJvJqsPGqJ5VHGoKVSCV7bmR+1u8gm/M51+agLm2WrzbYZHOBEQ8j9XFPMYBBn+r+odwg0Rc1HvdJuo2qsMRloeroFoF4jUN8gUI1AFQL1p0eX/4EYqvq4JIWqGOXRCEB7BBoBaLg3quJVvqiv65f68fcI9EOVW6VWK8o9F+kToApxN9WI+77JQxOf0aocs0p+6ZF+kprqHkntePMrlU7TdfZPIdvHkI1uzJY8ZHiAGXNABjKY0RFmyCU9jnsCXE1nB7zpl7oAAAAASUVORK5CYII=" alt="image"/>                            
+                                <h5>Forward Available Balance</h5>
+                            </div>
+                            <hr/>
+                            <div class="d-grid gap-2 forwardAvailableBalance">
+                                <span class="creditDebitCode d-flex justify-content-between">Credit Debit Code <b></b></span>
+                                <span class="bookDate d-flex justify-content-between">Book Date <b></b></span>
+                                <span class="currencyCode d-flex justify-content-between">Currency Code <b></b></span>
+                                <span class="balance d-flex justify-content-between">Balance <b></b></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 p-2">
+                        <div class="p-2 border border-primary">
+                            <div class="d-flex gap-3 align-items-center balance-header">
+                                <img width="42" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUBAMAAADuRQ3yAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAwUExURWpq/0dwTLi5/6ep/5GU/25u/3Nz/7i6/62v/6Kj/4mJ/5ye/8PE/6Wm/2ls/4yP/xRl4mMAAAAMdFJOUykA7N9eHhD8wpNJe6BLX6QAAAEISURBVEjH7de/DsFQFMfxQ7SJjYFZOorNauhgMrGYa/AMliZGA4MHMInRA5gZ/Ek9gtmEFxDc1oTf5RxBKuk36fYZbnqTe++htKpZpacZdV+R+l7AAF+pQ4xMn2aJVUNRh0dNRYlZmjJcWqMUl8bI4VKTqlxqSGhU1HtNrIe6WA49UB7JhIvo3AY07sFygA4wXQJawnQGqKfpZ9TSBOhGUxhpUVMYt0BK22eVy6J7vy2HrgN64NMdawEnnx55f6Cl+pMt+DgtYDkFtIfpAtAxpitAk5j2iXsULuGpneiAldqay2BUvqsSXZBRN33n/Sp4QAue5YLHvmCEkAwmgnFHMERJRjPuwHcBZiyOwHBas44AAAAASUVORK5CYII=" alt="image"/>
+                                <h5>Closing Balance</h5>
+                            </div>
+                            <hr/>
+                            <div class="d-grid gap-2 closingBalanceItemList">
+                                <span class="creditDebitCode d-flex justify-content-between">Credit Debit Code <b></b></span>
+                                <span class="bookDate d-flex justify-content-between">Book Date <b></b></span>
+                                <span class="currencyCode d-flex justify-content-between">Currency Code <b></b></span>
+                                <span class="balance d-flex justify-content-between">Balance <b></b></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 p-2">
+                        <div class="p-2 border border-warning">
+                            <div class="d-flex gap-3 align-items-center balance-header">
+                                <img width="42" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAABMBAMAAAA1uUwYAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAqUExURf+oAEdwTP/Zi/+zGP/BQP+qAP+sAP/Uev/HV//Pbv+/Q//dmf+sAv/PbKEAkOkAAAALdFJOUykA8uVVHhDRfbRbifkj8gAAAOtJREFUSMft1r8OwVAcxfEf0foz6cAsdzGweQGDB6jFXINdrBa7xW7xDF2QvgKL2cO4ram9h3uGVpB+ky7ySW51uDni6Ra+vMyZxUL08wYl8MkCseTGrCvW5poFduZqJkSedBg2lTbDKhIwzBWfYQ7Lyv65xkql6m8gW0eZjkjVI6MlYFuTnZgz8akRqHA2AgF2ARXOFOhbvlv881C/9tXOkr+XG7tzh0Y3pT7+QfJjA1OFgO1NdgasarIeYC3j1PCAbodmxoU7fCXVJqnG5SX9o+W7Q8jxQ04pcpiRM48djeQEJQctO4+Zsf0AeRydxmY6H30AAAAASUVORK5CYII=" alt="image"/>                            
+                                <h5>Closing Available Balance</h5>
+                            </div>
+                            <hr/>
+                            <div class="d-grid gap-2 closingAvailableBalance">
+                                <span class="creditDebitCode d-flex justify-content-between">Credit Debit Code <b></b></span>
+                                <span class="bookDate d-flex justify-content-between">Book Date <b></b></span>
+                                <span class="currencyCode d-flex justify-content-between">Currency Code <b></b></span>
+                                <span class="balance d-flex justify-content-between">Balance <b></b></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="mt-5">
+                <div class="mb-5 row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-centered table-striped table-nowrap mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>ProcessDescription</th>
+                                        <th>Amount</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="transactionItemList"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade show" id="centermodal" tabindex="-1" style="display: none;" role="dialog" aria-modal="true" style="display: block;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myCenterModalLabel">Transaction Details</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/vendor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
